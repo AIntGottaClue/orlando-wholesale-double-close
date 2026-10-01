@@ -4,7 +4,8 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
   site: 'https://orlando.wholesaledoubleclose.click',
   output: 'server',
-  adapter: cloudflare(),
+  adapter: cloudflare({ imageService: 'passthrough' }),
+  session: false,
   trailingSlash: 'always',
   build: { format: 'directory' }
 });
